@@ -9,10 +9,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--tyrian-purple);
+    background-image: url(/img/victor-freitas-vqDAUejnwKw-unsplash.jpg);
+    background-size: cover;
+    background-repeat: repeat;
     font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+.container {
+    background: #000000d0;
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    min-height: 50vh;
+   
+    
+} 
+
+.bmi-contents{
+}
+
+.gender-bmi{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }
