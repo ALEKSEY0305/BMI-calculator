@@ -15,8 +15,8 @@ body {
     font-family: 'Lato', sans-serif;
     background-image: url(/img/victor-freitas-vqDAUejnwKw-unsplash.jpg);
     background-size: cover;
-    background-repeat: repeat;
-    font-size: 1.2rem;
+    background-repeat: no-repeat;
+    font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
@@ -33,16 +33,62 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-    min-height: 50vh;
+    min-height: 65vh;
    
     
 } 
 
-.bmi-contents{
+
+.main-wrapper{
+    max-width: 1080px;
+}
+.bmi-heads{
+    display: flex;
+    align-items: center;
 }
 
-.gender-bmi{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+.bmi-heads .bmi-head{
+    padding: 1.6rem;
+    width: 100%;
+    cursor: pointer;
 }
+
+.active-head{
+    background: #d05757;
+    border-radius: 30px 0 30px 0;
+}
+
+.bmi-content{
+    padding: 2rem;
+}
+
+.form-group{
+    padding: 0.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+.form-group.col-3{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    align-items: center;
+}
+.gender-bmi{
+    display: contents;
+    /* justify-content: center; */
+    /* gap: 50px; */
+}
+
+.form-control{
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 0.6rem 1.2rem;
+    margin: 0.2rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.fo
+
