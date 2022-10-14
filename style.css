@@ -133,3 +133,30 @@ body {
 }
 /* js related */
 
+.show-bmi{
+    display: block!important;
+}
+
+.alert-error{
+    text-align: center;
+    padding: 0.9rem 1.3rem 0;
+    color: white;
+    display: none;
+}
+
+.bmi-output{
+    padding: 1rem 1.6rem;
+    text-align: center;
+}
+
+#bmi-value{
+    padding-bottom: 0.4rem;
+}
+
+#bmi-category{
+    color: var(--beauty);
+}
+
+#bmi-gender{
+    text-transform: capitalize;
+}
