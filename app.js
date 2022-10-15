@@ -43,6 +43,7 @@ function removeActiveClass(){
 //main bmi calculation
 function performBMICalc() {
   let BMIInfo = getUserInput();
+  if(BMIInfo) printBMIResult(BMIInfo);
 }
 
 //get input values
@@ -78,11 +79,19 @@ function getUserInput() {
         status = checkInputStatus([age, heightCm, weightKg]);
     
         if(status === true){
-            console.log("yes");
-        } else {
-           
-        }
+            return calculateBMI({
+                gender,
+                age,
+                height: parseFloat(heightCm) / 100,
+                weight: parseFloat(weightKg)
+            });
+        } 
     }
+    document.querySelector('.alert-error').style.display = "block";
+    setTimeout(() => {
+        document.querySelector('.alert-error').style.display = "none";
+    }, 1000);
+    return false;
 }
 
    
@@ -93,4 +102,15 @@ function checkInputStatus(inputs) {
     if(inputs[i].trim() === "" || isNaN(inputs[i])) return false;
   }
   return true;
+}
+
+//calculate BMI Value
+function calculateBMI(values){
+    let BMI;
+    if(activeForm === 'bmi-usc'){
+        BMI = (703 * (values.weight / Math.pow(values.height,2))).toFixed(2);
+    } else {
+        BMI = (values.weight / Math.pow(values.height, 2)).toFixed(2);
+    }
+    return{gender: values.gender, BMI};
 }
