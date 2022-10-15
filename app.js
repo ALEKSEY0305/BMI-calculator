@@ -12,12 +12,25 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 CALC_BTN.addEventListener('click', performBMICalc);
+CLR_BTN.addEventListener('click', () => {
+    let forms = [...document.forms];
+    forms.forEach(form => form.reset());
+    clearBMIInfo()
+});
+
+//clear BMI Info
+function clearBMIInfo(){
+    document.getElementById('bmi-value').innerHTML = "";
+    document.getElementById('bmi-categoty').innerHTML = "";
+    document.getElementById('bmi-gender').innerHTML = "";
+}
 
 //bmi calculation form toggle
 BMI_HEADS.forEach((bmiHead) => {
     bmiHead.addEventListener('click', () => {
         if(bmiHead.id === "bmi-usc-head") {
             removeActiveClass();
+            clearBMIInfo();
             bmiHead.classList.add('active-head');
             BMI_SI.classList.remove('show-bmi');
             BMI_USC.classList.add('show-bmi');
@@ -25,6 +38,7 @@ BMI_HEADS.forEach((bmiHead) => {
             }
         if(bmiHead.id === "bmi-si-head") {
             removeActiveClass();
+            clearBMIInfo();
             bmiHead.classList.add('active-head');
             BMI_USC.classList.remove('show-bmi');
             BMI_SI.classList.add('show-bmi');
@@ -35,9 +49,9 @@ BMI_HEADS.forEach((bmiHead) => {
 
 // remove active class from heads
 function removeActiveClass(){
-  BMI_HEADS.forEach(bmiHead => {
-    bmiHead.classList.remove('active-head');
-  });
+    BMI_HEADS.forEach(bmiHead => {
+     bmiHead.classList.remove('active-head');
+    });
 }
 
 //main bmi calculation
