@@ -114,3 +114,22 @@ function calculateBMI(values){
     }
     return{gender: values.gender, BMI};
 }
+
+//print BMI result information
+function printBMIResult(BMIInfo){
+    document.getElementById('bmi-value').innerHTML = `${BMIInfo.BMI} kg/m<sup>2</sup>`;
+
+    let bmiCategory;
+    if(BMIInfo.BMI < 18.5){
+        bmiCategory = "Underweight";
+    } else if(BMIInfo.BMI >= 18.5 && BMIInfo.BMI <= 24.9){
+        bmiCategory = "Normal Weight";
+    } else if(BMIInfo.BMI >= 25 && BMIInfo.BMI <= 29.9){
+        bmiCategory = "Overweight";
+    } else {
+        bmiCategory = "Obesity";
+    }
+
+    document.getElementById('bmi-category').innerHTML = `${bmiCategory}`;
+    document.getElementById('bmi-gender').innerHTML = `${BMIInfo.gender}`;
+}
