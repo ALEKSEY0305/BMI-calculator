@@ -25,10 +25,12 @@ body {
     height: 100vh;
 }
 
+
+
 .container {
     background: #000000d0;
     color: white;
-    border-radius: 30px;
+    border-radius: 15px;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -52,7 +54,7 @@ body {
 
 .active-head {
     background: var(--beauty);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .bmi-content {
@@ -116,6 +118,7 @@ body {
     cursor: pointer;
     transition: all 0.5s ease;
     letter-spacing: 0.5px;
+    border-radius: 10px;
 }
 
 .btns .btn:hover {
