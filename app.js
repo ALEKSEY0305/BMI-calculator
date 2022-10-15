@@ -9,26 +9,27 @@ let activeForm;
 window.addEventListener('DOMContentLoaded', () => {
   BMI_USC.classList.add('show-bmi');
   activeForm = "bmi-usc";
-})
+});
 
 CALC_BTN.addEventListener('click', performBMICalc);
 CLR_BTN.addEventListener('click', () => {
     let forms = [...document.forms];
     forms.forEach(form => form.reset());
-    clearBMIInfo()
+    clearBMIInfo();
 });
 
 //clear BMI Info
 function clearBMIInfo(){
     document.getElementById('bmi-value').innerHTML = "";
-    document.getElementById('bmi-categoty').innerHTML = "";
+    document.getElementById('bmi-category').innerHTML = "";
     document.getElementById('bmi-gender').innerHTML = "";
 }
+
 
 //bmi calculation form toggle
 BMI_HEADS.forEach((bmiHead) => {
     bmiHead.addEventListener('click', () => {
-        if(bmiHead.id === "bmi-usc-head") {
+        if(bmiHead.id === "bmi-usc-head"){
             removeActiveClass();
             clearBMIInfo();
             bmiHead.classList.add('active-head');
@@ -36,7 +37,7 @@ BMI_HEADS.forEach((bmiHead) => {
             BMI_USC.classList.add('show-bmi');
             activeForm = "bmi-usc";
             }
-        if(bmiHead.id === "bmi-si-head") {
+        if(bmiHead.id === "bmi-si-head"){
             removeActiveClass();
             clearBMIInfo();
             bmiHead.classList.add('active-head');
@@ -55,7 +56,7 @@ function removeActiveClass(){
 }
 
 //main bmi calculation
-function performBMICalc() {
+function performBMICalc(){
   let BMIInfo = getUserInput();
   if(BMIInfo) printBMIResult(BMIInfo);
 }
@@ -64,7 +65,7 @@ function performBMICalc() {
 function getUserInput() {
   let status;
   //get input from us units
-    if(activeForm === "bmi-usc") {
+    if(activeForm === "bmi-usc"){
         let age = document.getElementById('age1').value,
         gender = document.querySelector('#bmi-usc input[name = "gender"]:checked').value,
         heightFeet = document.getElementById('feet').value,
@@ -111,7 +112,7 @@ function getUserInput() {
    
 
 
-function checkInputStatus(inputs) {
+function checkInputStatus(inputs){
   for (let i = 0; i < inputs.lenght; i++){
     if(inputs[i].trim() === "" || isNaN(inputs[i])) return false;
   }
@@ -145,5 +146,5 @@ function printBMIResult(BMIInfo){
     }
 
     document.getElementById('bmi-category').innerHTML = `${bmiCategory}`;
-    document.getElementById('bmi-gender').innerHTML = `${BMIInfo.gender}`;
+    document.getElementById('bmi-gender').innerHTML = BMIInfo.gender;
 }
